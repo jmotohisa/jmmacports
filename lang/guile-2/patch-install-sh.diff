@@ -1,0 +1,8 @@
+--- build-aux/install-sh.orig	2013-10-14 14:54:04.000000000 +0900
++++ build-aux/install-sh	2013-10-14 14:54:44.000000000 +0900
+@@ -1,4 +1,4 @@
+-#!/nix/store/ryk1ywzz31kp4biclxq3yq6hpjycalyy-bash-4.2/bin/sh
++#!/bin/sh
+ # install - install a program, script, or datafile
+ 
+ scriptversion=2011-11-20.07; # UTC

@@ -1,0 +1,46 @@
+# $Id: $
+PortSystem	1.0
+name		guile-2
+categories	lang
+version		2.0.9
+homepage        http://www.gnu.org/software/guile/guile.html
+master_sites    gnu:guile
+distname        guile-${version}
+patchfiles	patch-install-sh.diff
+checksums	guile-${version}.tar.gz \
+			md5 531839c3fe887382ca9d4774db544d34  \
+			rmd160  d2ee5c7d235c8702c5c571ad79906365833f875b \
+			sha256  b24a112456702bf479395a1ac0b038fecafc8a252f6af798006312a7251315e7 \
+		patch-install-sh.diff md5 abaf2a39d65b2cadb6565ba078acc337
+description	GNU's Ubiquitous Intelligent Language for Extension (guile)
+long_description        \
+                Guile is an interpreter for the Scheme programming      \
+                language, packaged for use in a wide variety of         \
+                environments. Guile implements Scheme as described in   \
+                the Revised^5 Report on the Algorithmic Language Scheme \
+                (usually known as R5RS), providing clean and general    \
+                data and control structures.                            \
+                                                                        \
+                Guile goes beyond the rather austere language presented \
+                in R5RS, extending it with a module system, full access \
+                to POSIX system calls, networking support, multiple     \
+                threads, dynamic linking, a foreign function call       \
+                interface, powerful string processing, and many other   \
+                features needed for programming in the real world.
+
+maintainers	ist.hokudai.ac.jp:motohisa
+platforms	darwin
+license		LGPL-2.1+
+depends_lib	port:readline \
+		port:gettext \
+		port:libiconv \
+		port:libtool \
+		port:gmp \
+		port:libunistring
+configure.args  CPPFLAGS="-I${prefix}/include"          \
+                LDFLAGS="-L${prefix}/lib"               \
+                --infodir="${prefix}/share/info"        \
+                --mandir="${prefix}/share/man"          \
+                --enable-regex                          \
+                --disable-error-on-warning
+
